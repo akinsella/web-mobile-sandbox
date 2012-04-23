@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<!-- NOTES	
+Demo - uses IOS native scroll available in IOS5, but sidestep the document-bounce behavior. 
+another take on the solution first seen here: https://gist.github.com/1372229
+https://github.com/joelambert/ScrollFix/issues/2
+
+Tested on iPad 2, using IOS 5.0.1. 
+
+
+this solution does not require javascript or setting explicit heights on panels, 
+but uses flex-box layout for filling up available height. 
+
+the classes .vflex and .scrolling are added to the html structure for clarity 
+
+We need a wrapper (in this example .master and .detail) which are flex-boxed and given overflow-scrolling:touch.
+the same goes for the .panel element.
+.panel-content gets margin-bottom:-1px which seems to kill the page bounce for the document.
+
+
+
+-->
+<head>
+    <meta charset=utf-8/>
+    <meta name=viewport
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=format-detection content="telephone=no">
+    <title>ios webkit native scroll test</title>
+    <style>
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            /*fixes the page-bounce on desktop safari. tested on version 5.1 / mac */
+            overflow: hidden;
+        }
+
+        body, button {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 0;
+            padding: 10px;
+            line-height: 30px;
+            border-bottom: 1px solid #999;
+            border-top: 1px solid #fff;
+            font-size: 26px;
+        }
+
+        p {
+            margin: 10px;
+        }
+
+        .toolbar {
+            border: 1px solid #999;
+            padding: 10px;
+            background: #999;
+        }
+
+        header, footer {
+            height: 45px;
+            line-height: 45px;
+            background: #444;
+            color: #ccc;
+            padding: 0 10px;
+        }
+
+        body {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-align: stretch;
+            -webkit-box-flex: 1;
+        }
+
+        .content {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-align: stretch;
+            -webkit-box-flex: 1;
+            -webkit-overflow-scrolling: touch;
+            overflow: auto;
+        }
+
+        .panel {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-align: stretch;
+            -webkit-box-flex: 1;
+            -webkit-overflow-scrolling: touch;
+            overflow: auto;
+        }
+
+        .panel-content {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-box-align: stretch;
+            -webkit-box-flex: 1;
+            background: #fff;
+
+            /* this adds the extra pixel that's neccessary if the content is < panel height */
+            margin-bottom: -1px;
+        }
+
+
+    </style>
+</head>
+<body>
+<header>Header (scroll me to see the bug)</header>
+<div class=content>
+    <div class=toolbar>
+        <button type=button id=btn-toggle>Toggle content below</button>
+    </div>
+    <div class=panel>
+        <div class=panel-content>
+            <ul>
+                <li>First line</li>
+            </ul>
+            <ul id=longlist style=display:none>
+                <li>Second line</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                <li>cillum dolore eu fugiat nulla pariatur.</li>
+                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+                <li>deserunt mollit anim id est laborum.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                <li>cillum dolore eu fugiat nulla pariatur.</li>
+                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+                <li>deserunt mollit anim id est laborum.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                <li>cillum dolore eu fugiat nulla pariatur.</li>
+                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+                <li>deserunt mollit anim id est laborum.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                <li>cillum dolore eu fugiat nulla pariatur.</li>
+                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+                <li>deserunt mollit anim id est laborum.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                <li>cillum dolore eu fugiat nulla pariatur.</li>
+                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+                <li>deserunt mollit anim id est laborum.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+                <li>cillum dolore eu fugiat nulla pariatur.</li>
+                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+                <li>deserunt mollit anim id est laborum.</li>
+                <li>Last line</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+<footer id=footer>
+    Footer
+</footer>
+<script>
+
+    document.getElementById("footer").addEventListener('touchmove', function (e) {
+        e.preventDefault();
+    }, false);
+    document.getElementById("btn-toggle").addEventListener('click', function (e) {
+        var list = document.getElementById('longlist');
+        list.style.display = (list.style.display == 'block') ? 'none' : 'block';
+    }, false);
+</script>
+</body>
+</html>
