@@ -22,14 +22,12 @@ the same goes for the .panel element.
 -->
 <head>
     <meta charset=utf-8/>
-    <meta name=viewport
-          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta name=apple-mobile-web-app-capable content=yes>
     <meta name=apple-mobile-web-app-status-bar-style content=black>
     <meta name=format-detection content="telephone=no">
     <title>ios webkit native scroll test</title>
     <style>
-
 
         html, body {
             margin: 0;
@@ -84,15 +82,6 @@ the same goes for the .panel element.
             -webkit-box-flex: 1;
         }
 
-        .content {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-box-align: stretch;
-            -webkit-box-flex: 1;
-            -webkit-overflow-scrolling: touch;
-            overflow: auto;
-        }
-
         .panel {
             display: -webkit-box;
             -webkit-box-orient: vertical;
@@ -113,22 +102,13 @@ the same goes for the .panel element.
             margin-bottom: -1px;
         }
 
-
     </style>
 </head>
 <body>
-<header>Header (scroll me to see the bug)</header>
-<div class=content>
-    <div class=toolbar>
-        <button type=button id=btn-toggle>Toggle content below</button>
-    </div>
-    <div class=panel>
-        <div class=panel-content>
-            <ul>
-                <li>First line</li>
-            </ul>
-            <ul id=longlist style=display:none>
-                <li>Second line</li>
+    <header>Header (scroll me to see the bug)</header>
+    <div class="panel">
+        <div class="panel-content">
+            <ul id="longlist">
                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
                 <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
                 <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
@@ -181,11 +161,7 @@ the same goes for the .panel element.
             </ul>
         </div>
     </div>
-</div>
-</div>
-<footer id=footer>
-    Footer
-</footer>
+    <footer id="footer"> Footer</footer>
 <script>
 
     document.getElementById("footer").addEventListener('touchmove', function (e) {
