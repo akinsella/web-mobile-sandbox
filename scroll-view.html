@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
-<!-- NOTES	
-Demo - uses IOS native scroll available in IOS5, but sidestep the document-bounce behavior. 
+<!-- NOTES
+Demo - uses IOS native scroll available in IOS5, but sidestep the document-bounce behavior.
 another take on the solution first seen here: https://gist.github.com/1372229
 https://github.com/joelambert/ScrollFix/issues/2
 
-Tested on iPad 2, using IOS 5.0.1. 
+Tested on iPad 2, using IOS 5.0.1.
 
 
-this solution does not require javascript or setting explicit heights on panels, 
-but uses flex-box layout for filling up available height. 
+this solution does not require javascript or setting explicit heights on panels,
+but uses flex-box layout for filling up available height.
 
-the classes .vflex and .scrolling are added to the html structure for clarity 
+the classes .vflex and .scrolling are added to the html structure for clarity
 
 We need a wrapper (in this example .master and .detail) which are flex-boxed and given overflow-scrolling:touch.
 the same goes for the .panel element.
@@ -86,12 +86,6 @@ the same goes for the .panel element.
         }
 
         .panel-content {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-box-align: stretch;
-            -webkit-box-flex: 1;
-            background: #fff;
-
             /* this adds the extra pixel that's neccessary if the content is < panel height */
             margin-bottom: -1px;
         }
@@ -99,71 +93,68 @@ the same goes for the .panel element.
     </style>
 </head>
 <body>
-    <header>Header (scroll me to see the bug)</header>
-    <div class="panel">
-        <div class="panel-content">
-            <ul id="longlist">
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                <li>cillum dolore eu fugiat nulla pariatur.</li>
-                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-                <li>deserunt mollit anim id est laborum.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                <li>cillum dolore eu fugiat nulla pariatur.</li>
-                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-                <li>deserunt mollit anim id est laborum.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                <li>cillum dolore eu fugiat nulla pariatur.</li>
-                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-                <li>deserunt mollit anim id est laborum.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                <li>cillum dolore eu fugiat nulla pariatur.</li>
-                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-                <li>deserunt mollit anim id est laborum.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                <li>cillum dolore eu fugiat nulla pariatur.</li>
-                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-                <li>deserunt mollit anim id est laborum.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
-                <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
-                <li>cillum dolore eu fugiat nulla pariatur.</li>
-                <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
-                <li>deserunt mollit anim id est laborum.</li>
-                <li>Last line</li>
-            </ul>
-        </div>
+<header>Header (scroll me to see the bug)</header>
+<div class="panel">
+    <div class="panel-content">
+        <ul id="longlist">
+            <li>Second line</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+            <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+            <li>cillum dolore eu fugiat nulla pariatur.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+            <li>deserunt mollit anim id est laborum.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+            <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+            <li>cillum dolore eu fugiat nulla pariatur.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+            <li>deserunt mollit anim id est laborum.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+            <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+            <li>cillum dolore eu fugiat nulla pariatur.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+            <li>deserunt mollit anim id est laborum.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+            <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+            <li>cillum dolore eu fugiat nulla pariatur.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+            <li>deserunt mollit anim id est laborum.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+            <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+            <li>cillum dolore eu fugiat nulla pariatur.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+            <li>deserunt mollit anim id est laborum.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit</li>
+            <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+            <li>Ut enim ad minim veniam, quis nostrud exercitation ullamco</li>
+            <li>laboris nisi ut aliquip ex ea commodo consequat.</li>
+            <li>Duis aute irure dolor in reprehenderit in voluptate velit esse</li>
+            <li>cillum dolore eu fugiat nulla pariatur.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</li>
+            <li>deserunt mollit anim id est laborum.</li>
+            <li>Last line</li>
+        </ul>
     </div>
-    <footer id="footer"> Footer</footer>
+</div>
+<footer id="footer">Footer</footer>
 <script>
 
     document.getElementById("footer").addEventListener('touchmove', function (e) {
         e.preventDefault();
-    }, false);
-    document.getElementById("btn-toggle").addEventListener('click', function (e) {
-        var list = document.getElementById('longlist');
-        list.style.display = (list.style.display == 'block') ? 'none' : 'block';
     }, false);
 </script>
 </body>
