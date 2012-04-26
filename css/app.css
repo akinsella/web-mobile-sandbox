@@ -1,0 +1,137 @@
+.box                     { display: -webkit-box; }
+.vertical                { -webkit-box-orient: vertical; }
+.justify                 { -webkit-box-pack: justify; }
+.flex                    { -webkit-box-flex: 1; }
+.center                  { -webkit-box-align: center; -webkit-box-pack: center;  }
+
+/*
+// This is the default content container
+*/
+
+.pages_wrapper           { display: -webkit-box; -webkit-transition: -webkit-transform .3s cubic-bezier(.15,0,.87,1);
+                           -webkit-box-flex: 1; width: 100%; }
+
+.page_wrapper            { display: -webkit-box; -webkit-box-orient: vertical; width: 100%; }
+.page                    { overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-box-flex: 1; }
+
+/*
+// SIZES - STANDARD RESOLUTION //
+// Default header, search, label and browser footer bars are all 44px high
+// NOTE: All numbers here are non retina (standard).
+
+// The tiniest horizontal bar around seems to be the sms input bar: 40px high
+// Default bottom tab-bar is 49px high
+
+// Horizontal bar size classes:
+*/
+
+.header, .footer          { -webkit-box-sizing: border-box; box-sizing: border-box;
+                            -webkit-box-align: center; display: -webkit-box; }
+.header                   { height: 44px; padding: 0 5px; -webkit-user-select: none;
+                            position: relative; z-index: 1; }
+.footer                   { min-height: 40px; padding: 1px 6px 6px 6px;
+                            -webkit-box-align: end; }
+
+.header, .blue_g          { background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#B3BECC), color-stop(50%,#8A9BB1), color-stop(50%,#8094AF), color-stop(100%,#6F84A1));
+                            background-image: -webkit-linear-gradient(top, #B3BECC 0%,#8A9BB1 50%,#8094AF 50%,#6F84A1 100%);
+                            background-image:         linear-gradient(top, #B3BECC 0%,#8A9BB1 50%,#8094AF 50%,#6F84A1 100%);
+                            border-top: 1px solid #CDD5DF; border-bottom: 1px solid #2E3743; }
+
+.tabs, .black_g           { background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2E2E2E), color-stop(50%,#151515), color-stop(50%,#000), color-stop(100%,#000));
+                            background-image: -webkit-linear-gradient(top, #2E2E2E 0%,#151515 50%,#000 50%,#000 100%);
+                            background-image:         linear-gradient(top, #2E2E2E 0%,#151515 50%,#000 50%,#000 100%);
+                            -webkit-box-shadow: inset 0 1px 0 #575757; box-shadow: inset 0 1px 0 #575757;
+                            border-top: 1px solid #141414; }
+
+.footer, .gray_g          { background-image: -webkit-gradient(linear, left top, left bottom, from(#E9EBED), to(#C3C5C9));
+                            background-image: -webkit-linear-gradient(top, #E9EBED, #C3C5C9);
+                            background-image:         linear-gradient(top, #E9EBED, #C3C5C9);
+                            -webkit-box-shadow: inset 0 1px 0 #FEFEFE; box-shadow: inset 0 1px 0 #FEFEFE;
+                            border-top: 1px solid #BBBDBE; }
+
+.blue_gray_g              { background-image: -webkit-gradient(linear, left top, left bottom, from(#D6DDE2), to(#B1BBC3));
+                            background-image: -webkit-linear-gradient(top, #D6DDE2, #B1BBC3);
+                            background-image:         linear-gradient(top, #D6DDE2, #B1BBC3);
+                            border-bottom: 1px solid #8999A5; border-top: 1px solid #E4EAEE; }
+
+.header h1                { color: #fff; text-shadow: 0 -1px 0 #4C5868; -webkit-box-flex: 1;
+                            white-space: nowrap; text-overflow: ellipsis; overflow: hidden; text-align: center;
+                            line-height: 24px; }
+
+.list                     { -webkit-transform: translate3d(0,0,0); }
+.row:first-child          { border-top: 1px solid #E0E0E0; }
+.row                      { border-bottom: 1px solid #E0E0E0; padding-top: 3px; height: 62px;
+                            -webkit-box-sizing: border-box; box-sizing: border-box; overflow: hidden;
+                            display: -webkit-box; -webkit-user-select: none; }
+.row h1                   { font-size: 16px; white-space: nowrap; text-overflow: ellipsis;
+                            -webkit-box-flex: 1; overflow: hidden; }
+.row p                    { color: #888; line-height: 17px; margin-top: -2px; max-height: 35px;
+                            overflow: hidden; -webkit-box-flex: 1; }
+.row time                 { color: #2D76D9; }
+.row .arrow               { font-family: 'icons'; color: #7F7F7F; font-size: 16px; width: 32px; }
+.row .status              { width: 32px; }
+
+.row.active               { background-image: -webkit-gradient(linear, left top, left bottom, from(#238BF1), to(#235EE2));
+                            background-image: -webkit-linear-gradient(top, #238BF1, #235EE2);
+                            background-image:         linear-gradient(top, #238BF1, #235EE2); }
+.row.active time,
+.row.active p,
+.row.active h1,
+.row.active .arrow        { color: #fff; }
+
+.row.unread .status:after { content: ""; height: 12px; width: 12px; display: block;
+                            -webkit-border-radius: 6px; border-radius: 6px;
+                            background-image: -webkit-gradient(linear, left top, left bottom, from(#85B0F5), to(#2859B4));
+                            background-image: -webkit-linear-gradient(top, #85B0F5, #2859B4);
+                            background-image:         linear-gradient(top, #85B0F5, #2859B4); }
+
+.row.delete time,
+.row.delete .arrow span   { display: none; }
+.row.delete .arrow        { padding-left: 20px; margin-right: 5px; overflow: hidden; width: inherit; }
+
+.search_style,
+input[type=search]        { border: 1px solid; border-color: #777 #888 #999;
+                            -webkit-box-shadow: inset 0 2px 4px -1px rgba(90, 90, 90, 0.7);
+                            box-shadow: inset 0 2px 4px -1px rgba(90, 90, 90, 0.7);
+                            padding: 3px 3px 3px 10px; -webkit-appearance: none; font-size: 14px; }
+
+input[type=search]        { padding-left: 27px; -webkit-border-radius: 15px; border-radius: 15px; height: 30px; }
+.list_search:after        { content: "S"; font-family: 'icons'; position: absolute; left: 15px; top: 50%; margin-top: -8px;
+                            font-size: 19px; color: #959AA0; }
+
+.list_search              { padding: 5px 6px; -webkit-transform: translate3d(0,0,0); }
+.list_search input[type=search] { border-color: #7F8EA0 #97A4B0 #A5B0BA; width: 100%; }
+
+
+textarea.sms_input        { -webkit-box-flex: 1; display: -webkit-box; margin: 0 6px; font-size: 16px;
+                            -webkit-box-shadow: inset 0 2px 5px -1px rgba(90, 90, 90, 1), 0 1px 0 #E3E4E6;
+                            box-shadow: inset 0 2px 5px -1px rgba(90, 90, 90, 1), 0 1px 0 #E3E4E6;
+                            -webkit-transform: translate3d(0,0,0); -webkit-overflow-scrolling: touch;
+                            max-height: 140px; }
+
+
+.rotator                 { -webkit-transform-origin-x: center;
+                           -webkit-transform-origin-y: center;
+                           -webkit-transition: -webkit-transform 300ms;
+                           -webkit-transform: translateZ(0);
+                           margin: 0 auto; }
+.pull_refresh            { position: absolute; height: 50px; width: 100%;
+                           -webkit-transform: translate3d(0, -50px, 0); z-index: 1; }
+.pull_refresh .rotator   { background: url(../image/blackArrow.png) no-repeat center center;
+                           width: 50px; height: 50px; background-size: 30%; }
+.notifs                  { text-align: center; padding: 4px 0; background-color: rgba(244, 245, 220, 0.9);
+                           position: absolute; top: 0; width: 100%; border-bottom: 1px solid #d0cba7;
+                           z-index: 100; }
+
+.screen                  { z-index: 100000; position: absolute; overflow: hidden;
+                           bottom: 0; left: 0; right: 0; top: 0; height: 100%; width: 100%;
+                           display: -webkit-box; -webkit-box-orient: vertical;
+                           -webkit-transition: -webkit-transform 250ms cubic-bezier(.45,.7,.7,1);
+                           /* reverse: cubic-bezier(.3,0,.7,.45) - slide in and out */ }
+.slide_up                { -webkit-transform: translate3d(0, 100%, 0); }
+
+@media only screen and (max-device-width: 767px) and (orientation:landscape) {
+  .header        { height: 32px; padding: 0 5px; }
+  .header h1     { font-size: 16px; }
+  .header button { zoom: .83; line-height: 1.4; margin-top: -1px; }
+}

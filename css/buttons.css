@@ -1,0 +1,93 @@
+/* HADER BUTTON */
+button                     { color: #fff; font-size: 13px; text-shadow: 0 -1px 0 rgba(47, 65, 93, 0.8);
+                             -webkit-border-radius: 5px; border-radius: 5px; padding: 0 9px;
+                             border: 1px solid; display: block; }
+.header button             { background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8EA4C1), color-stop(50%,#5877A2), color-stop(50%,#476999), color-stop(100%,#4A6C9B));
+                             background-image: -webkit-linear-gradient(top, #8EA4C1 0%,#5877A2 50%,#476999 50%,#4A6C9B 100%);
+                             background-image:         linear-gradient(top, #8EA4C1 0%,#5877A2 50%,#476999 50%,#4A6C9B 100%);
+                             -webkit-box-shadow: 0 1px 0 #9BAABF, inset 0 1px 0 #7D8DA4;
+                             box-shadow: 0 1px 0 #9BAABF, inset 0 1px 0 #7D8DA4;
+                             border-color: #31373F #445B7B #375175;
+                             height: 29px;  }
+
+/* HADER ACTION BUTTON (Lighter blue hue, ex 'send' email) */
+.header button.action      { background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7B9EE9), color-stop(50%,#376FE0), color-stop(50%,#2260DD), color-stop(100%,#2463DE));
+                             background-image: -webkit-linear-gradient(top, #7B9EE9 0%,#376FE0 50%,#2260DD 50%,#2463DE 100%);
+                             background-image:         linear-gradient(top, #7B9EE9 0%,#376FE0 50%,#2260DD 50%,#2463DE 100%);
+                             border-color: #2A354B #1947B3 #1B4AB5;
+                             -webkit-box-shadow: inset 0 1px 0 #6C88C5;
+                             box-shadow: inset 0 1px 0 #6C88C5; }
+
+
+/* HADER BACK BUTTON */
+.header button.back        { position: relative; margin-left: 9px; z-index: 10;
+                             border-radius: 10px 5px 5px 10px; text-indent: -4px;
+                             -webkit-transform: translate3d(0,0,0); }
+.header button.back:after  { height: 16px; width: 16px; content: ""; top: 6px; left: -6px; position: absolute; z-index: -1;
+                             background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#89A0BF), color-stop(50%,#5877A2), color-stop(50%,#476999), color-stop(100%,#4A6C9B));
+                             background-image: -webkit-linear-gradient(top left, #859CBB 0%,#5877A2 50%,#476999 50%,#4A6C9B 100%);
+                             background-image:         linear-gradient(top left, #89A0BF 0%,#5877A2 50%,#476999 50%,#4A6C9B 100%);
+                             -webkit-box-shadow: 0 1px 0 0 #9BAABF;
+                             box-shadow: 0 1px 0 0 #9BAABF;
+                             -webkit-transform: rotate(45deg) scale3d( 1, 1, 0 ); }
+
+.header button.back:before  { height: 16px; width: 16px; content: ""; top: 5px; left: -6px; position: absolute; z-index: 1;
+                              border-left: 1px solid #343b43; border-bottom: 1px solid #375073;
+                              -webkit-transform: rotate(45deg); }
+
+
+/* HEADER BUTTON ACTIVE STATE (this should be class-toggled and tied in with touch events) */
+.header button.active      { background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7D88A5), color-stop(50%,#3A4E78), color-stop(50%,#253C6A), color-stop(100%,#273F6D));
+                             background-image: -webkit-linear-gradient(top, #7D88A5 0%,#3A4E78 50%,#253C6A 50%,#273F6D 100%);
+                             background-image:         linear-gradient(top, #7D88A5 0%,#3A4E78 50%,#253C6A 50%,#273F6D 100%);
+                             border-color: #2C2F37 #1B2C4F #1D3052;
+                             -webkit-box-shadow: inset 0 1px 0 #6D778D;
+                             box-shadow: inset 0 1px 0 #6D778D; }
+
+/* Special for active back button */
+.header button.back.active:after  { background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#6E7A9A), color-stop(50%,#3A4E78), color-stop(50%,#253C6A), color-stop(100%,#273F6D));
+                                    background-image: -webkit-linear-gradient(top left, #6E7A9A 0%,#3A4E78 50%,#253C6A 50%,#273F6D 100%);
+                                    background-image:         linear-gradient(top left, #6E7A9A 0%,#3A4E78 50%,#253C6A 50%,#273F6D 100%);
+                                    -webkit-box-shadow: none; box-shadow: none; }
+.header button.back.active:before { border-bottom: 1px solid #1F3459; }
+
+/* GENERIC GREEN BG BUTTON */
+button.green                { border: 1px solid; border-color: #458E21 #4A8140 #1D5909;
+                              background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8AC641), color-stop(50%,#6CAE33), color-stop(50%,#58A11E), color-stop(100%,#3D8615));
+                              background-image: -webkit-linear-gradient(top, #8AC641 0%,#6CAE33 50%,#58A11E 50%,#3D8615 100%);
+                              background-image:         linear-gradient(top, #8AC641 0%,#6CAE33 50%,#5BA41F 50%,#3D8615 100%);
+                              -webkit-box-shadow: 0px 1px 0 #EDEFEF, inset 0 1px 0 #9BCE5C; color: #A8C98E;
+                              box-shadow: 0px 1px 0 #EDEFEF, inset 0 1px 0 #9BCE5C; text-shadow: 0 -1px 0 #5D912C; }
+
+
+/* ICON */
+button.icon                 { font-family: 'icons'; text-align: center; vertical-align: middle; }
+
+/* WRITE/COMPOSE ICON */
+.icon.write                 { width: 32px; font-size: 23px; padding: 2px 6px; }
+
+
+/* FOOTER BUTTONS/INPUT */
+.footer button,
+.footer textarea            { height: 26px; margin-top: 6px; -webkit-border-radius: 13px;
+                              border-radius: 13px; display: block; }
+.footer .icon.camera        { width: 26px; border: 1px solid; border-color: #414953 #4F5965 #586271;
+                              -webkit-box-shadow: 0px 1px 0 #E3E4E6; box-shadow: 0px 1px 0 #E3E4E6;
+                              background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A0A6B0), color-stop(52%,#888F9B), color-stop(52%,#616C7B), color-stop(100%,#586372));
+                              background-image: -webkit-linear-gradient(top, #A0A6B0 0%,#888F9B 52%,#616C7B 52%,#586372 100%);
+                              background-image:         linear-gradient(top, #A0A6B0 0%,#888F9B 52%,#616C7B 52%,#586372 100%);
+                              font-size: 17px; padding: 3px 4px; }
+
+.footer button.green        { width: 73px; font-size: 16px; padding: 0 1px; }
+
+
+/* DELETE BUTTON (ROW) */
+.row.delete .delete       { margin-right: 5px; height: 33px; display: block !important;
+                            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D17E84), color-stop(50%,#D05761), color-stop(50%,#BD1421), color-stop(100%,#BC1421));
+                            background-image: -webkit-linear-gradient(top, #D17E84 0%,#D05761 50%,#BD1421 50%,#BC1421 100%);
+                            background-image:         linear-gradient(top, #D17E84 0%,#D05761 50%,#BD1421 50%,#BC1421 100%);
+                            border-color: #5C393C #82363D #8F0F19;
+                            font-size: 14px; padding: 0 10px; margin: 0;
+                            -webkit-box-shadow: inset 0 1px 1px -1px #5C393C;
+                            box-shadow: inset 0 1px 1px -1px #5C393C;
+                            -webkit-transform: translate3d(100%, 0, 0); }

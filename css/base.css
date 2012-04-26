@@ -1,0 +1,37 @@
+/*
+  by: philip harrison > h at rrison dot se
+  from sweden with love
+*/
+
+html                   { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+html, body             { overflow: hidden; }
+body                   { top: 0; left: 0; right: 0; bottom: 0;
+                         -webkit-box-orient: vertical; display: -webkit-box;
+                         position: absolute; z-index: 0; }
+body, button, input,
+textarea, select       { font: 14px/21px Helvetica, sans-serif; color: #252525;
+                         -webkit-font-smoothing: antialiased;
+                         -webkit-text-size-adjust: 100%; }
+
+h1, h2, h3, h4, h5,
+h6, p, figure, body    { margin: 0; }
+
+h1                     { font-size: 20px; color: #000; }
+
+a:hover, a:active      { outline: none; }
+
+button                 { font-weight: bold; color: #fff; -webkit-appearance: none;
+                         line-height: normal; }
+input, select,
+textarea, button       { -webkit-box-sizing: border-box; box-sizing: border-box; outline: 0; }
+
+::-webkit-input-placeholder { color: #ABABAB; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+input[type="search"]   { -webkit-appearance: textfield; }
+
+.cf:before, .cf:after  { content: ""; display: table; }
+.cf:after              { clear: both; }
+
+@font-face {
+    font-family: 'icons';
+    src: url(data:font/woff;charset=utf-8;base64,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) format('woff'); }
