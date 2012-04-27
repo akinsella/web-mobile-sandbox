@@ -12,14 +12,14 @@ $(document).ready(function() {
 
         var viewModel;
 
-        amplify.request("twitter-search", "q=html5&rpp=5", function(data) {
+        amplify.request("twitter-search", "q=xebiafr&rpp=50", function(data) {
             viewModel = ko.mapping.fromJS(data);
             ko.applyBindings(viewModel);
 
         });
 
         $("#refresh").click(function() {
-            amplify.request("twitter-search", "q=html5&rpp=5", function(data) {
+            amplify.request("twitter-search", "q=xebiafr&rpp=50", function(data) {
                 ko.mapping.fromJS(data, viewModel);
 
             });

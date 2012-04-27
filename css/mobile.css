@@ -1,35 +1,9 @@
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-ul li {
-    margin: 0;
-    padding: 10px;
-    line-height: 30px;
-    border-bottom: 1px solid #999;
-    border-top: 1px solid #fff;
-    font-size: 26px;
-}
-
-p {
-    margin: 10px;
-}
-
-
-article, aside, figure, hgroup,
-menu, nav, section { display: block; }
-
 body {
-    width: 500px;
+    width: 426px;
+    height:640px;
     margin: 20px auto;
     font: 16px/1.4 Arial, sans-serif;
     background: #f3eee9;
-}
-
-p {
-    margin: 0 0 1em;
 }
 
 .comment {
@@ -37,7 +11,7 @@ p {
     padding: 0 0 1em;
     border-bottom: 1px solid #ddd;
     margin: 0 0 1em;
-    *zoom: 1;
+    zoom: 1;
 }
 
 .comment-img {
