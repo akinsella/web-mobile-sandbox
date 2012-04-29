@@ -1,30 +1,18 @@
-amplify.request.define("twitter-search", "ajax", {
-    url: "http://search.twitter.com/search.json",
-    dataType: "jsonp",
-    dataMap: {
-        term: "q"
-    }
+$(document).ready(function () {
+    onReadyState();
 });
 
-$(document).ready(function() {
-
-    (function($) {
-
+function onReadyState() {
+    (function ($) {
         var viewModel;
 
-        amplify.request("twitter-search", "q=xebiafr&rpp=50", function(data) {
-            viewModel = ko.mapping.fromJS(data);
-            ko.applyBindings(viewModel);
-
+        $.ajax({
+            url:'http://devoxx-xebia.cloudfoundry.com/rest/v1/events/6/presentations?callback=?',
+            success:function (data) {
+                viewModel = ko.mapping.fromJS(data);
+                ko.applyBindings(viewModel);
+                $("#presentations").show();
+            }
         });
-
-        $("#refresh").click(function() {
-            amplify.request("twitter-search", "q=xebiafr&rpp=50", function(data) {
-                ko.mapping.fromJS(data, viewModel);
-
-            });
-        });
-
-    })(jQuery);
-
-});
+    })($);
+}

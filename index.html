@@ -2,9 +2,8 @@
 <html>
 
     <head>
-        <meta charset=utf-8/>
-        <meta name=viewport
-              content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <meta charset="utf-8"/>
+        <meta name=viewport content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <meta name=apple-mobile-web-app-capable content=yes>
         <meta name=apple-mobile-web-app-status-bar-style content=black>
         <meta name=format-detection content="telephone=no">
@@ -16,8 +15,9 @@
         <link rel="stylesheet" href="css/buttons.css"/>
         <link rel="stylesheet" href="css/mobile.css"/>
 
-        <script src="javascript/lib/jquery/jquery-1.7.1.js"></script>
-        <script src="javascript/lib/amplify/amplify-1.1.0.js"></script>
+        <!--<script src="javascript/lib/jquery/jquery-1.7.1.js"></script>-->
+        <script src="javascript/lib/zepto/zepto-1.0rc1.js"></script>
+        <!--<script src="javascript/lib/amplify/amplify-1.1.0.js"></script>-->
         <script src="javascript/lib/knockout/knockout-2.0.0.js"></script>
         <script src="javascript/lib/knockout/knockout-mapping-2.1.2.js"></script>
 
@@ -36,42 +36,15 @@
 
         <div class="pages_wrapper">
             <div class="page_wrapper">
-
-                <section class="comments">
-                    <article class="comment">
-                        <a class="comment-img" href="#non">
-                            <img src="https://si0.twimg.com/profile_images/1228977399/bg2_normal.jpg" alt="" width="50" height="50">
-                        </a>
-                        <div class="comment-body">
-                            <div class="text">
-                                <p>Hello, this is an example forked from <a href="http://nicolasgallagher.com">Nicolas
-                                    Gallagher's</a> <a href="http://jsfiddle.net/necolas/vhZds/embedded/result/">timeline
-                                    lab</a> integrating his nice css+html5 timeline with a twitter feed. And since I've been
-                                    learning knockout.js and amplify.js, I decided to include how to use these libraries to
-                                    acheive this goal. Really simple!
-                                    <button id="refresh">refresh</button>
-                                </p>
-                            </div>
-                            <p class="attribution">by <a href="http://anexiledderryman.com">Shay Doherty</a> at 21:06, 31st Jan
-                                2012</p>
-                        </div>
-                    </article>
-                </section>
-                <section class="comments" data-bind="foreach: results">
-                    <article class="comment">
-                        <a class="comment-img" href="#non">
-                            <img data-bind='attr: { src: profile_image_url }' alt="" width="50" height="50">
-                        </a>
-
-                        <div class="comment-body">
-                            <div class="text">
-                                <p data-bind="text: text"></p>
-                            </div>
-                            <p class="attribution">by <a href="#non"><i data-bind="text: from_user"></i></a> at <i
-                                    data-bind="text:created_at"></i></p>
-                        </div>
-                    </article>
-                </section>
+                <div id="presentations" data-bind="foreach: $data" class="presentations" style="display: none;">
+                    <div class="presentation">
+                        <p data-bind="text: title"></p>
+                        <p class="attribution">by <a href="#speaker">
+                            <i data-bind="text: speaker"></i></a> -
+                            <i data-bind="text:type"></i>
+                        </p>
+                     </div>
+                </div>
             </div>
         </div>
 
