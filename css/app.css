@@ -23,32 +23,18 @@
 // This is the default content container
 */
 
-.pages_wrapper {
-    display: -webkit-box;
-    -webkit-transition: -webkit-transform .3s cubic-bezier(.15,0,.87,1);
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    -webkit-box-flex: 1;
-}
-
 .page_wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-align: stretch;
     -webkit-box-flex: 1;
     -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
     overflow: auto;
 }
 .page {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    -webkit-box-flex: 1;
+    margin-bottom: -1px;
 }
 
-
-.panel {
-    /* this adds the extra pixel that's neccessary if the content is < panel height */
-     margin-bottom: -1px;
-}
 
 /*
 // SIZES - STANDARD RESOLUTION //

@@ -23,7 +23,8 @@
 
         <script src="javascript/app.js"></script>
 
-        <script src="javascript/lib/scrollfix-0.1.js"></script>
+        <script src="javascript/lib/scrollfix.js"></script>
+        <script src="javascript/lib/toolbarfix.js"></script>
     </head>
 
     <body>
@@ -34,8 +35,8 @@
             <button class="icon write">W</button>
         </header>
 
-        <div class="pages_wrapper">
-            <div class="page_wrapper">
+        <div class="page_wrapper">
+            <div id="page" class="page">
                 <div id="presentations" data-bind="foreach: $data" class="presentations" style="display: none;">
                     <div class="presentation">
                         <p data-bind="text: title"></p>
@@ -51,5 +52,10 @@
         <footer class="footer"> </footer>
 
     </body>
+
+    <script>
+    		var scrollable = document.getElementById("page");
+    		new ScrollFix(scrollable);
+    </script>
 
 </html>
