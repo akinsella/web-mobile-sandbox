@@ -21,7 +21,7 @@
             </div>
         </header>
         <div class="app">
-            <div id="master" class="master vflex scrolling">
+            <div id="master" class="master vflex">
                 <div class="toolbar">
                     <p>This demo uses iOS native scroll available in IOS5, but sidesteps the page-bounce behavior/issue.</p>
                     <select id="category" name="category">
@@ -29,8 +29,8 @@
                         <option value="html5">HTML 5</option>
                     </select>
                 </div>
-                <div class="panel vflex scrolling">
-                    <div class="panel-content vflex">
+                <div class="scrolling vflex">
+                    <div id="master-content">
                         <ul id="master-items">
                             <li>
                                 <a href="#">
@@ -222,7 +222,7 @@
                     </div>
                 </div>
             </div>
-            <div id="detail" class="detail vflex scrolling">
+            <div id="detail" class="detail">
             </div>
         </div>
         <footer id="footer">
@@ -261,17 +261,8 @@
                 </ul>
             </div>
             <div style="margin: 10px; ">
-                <span id="website">Helyx.org</span><span class="separator"> - </span><span id="copyright">Copyright 2012</span>
+                <span id="website"><a href="http://blog.helyx.org">Helyx.org</a></span><span class="separator"> - </span><span id="copyright">Copyright 2012</span>
             </div>
         </footer>
      </body>
-    <script>
-         document.getElementById("footer").addEventListener('touchmove', function (e) {
-             e.preventDefault();
-         }, false);
-         document.getElementById("btn-toggle").addEventListener('click', function (e) {
-             var list = document.getElementById('longlist');
-             list.style.display = (list.style.display == 'block') ? 'none' : 'block';
-         }, false);
-     </script>
 </html>

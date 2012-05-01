@@ -1,4 +1,3 @@
-
 html, body {
     height: 100%;
     /*fixes the page-bounce on desktop safari. tested on version 5.1 / mac */
@@ -16,6 +15,12 @@ ul {
     list-style: none;
 }
 
+h1, h2, h3 {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
 body, button {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -28,12 +33,6 @@ header {
     font-size: 2em;
     text-shadow: 1px 1px 1px #999;
     font-family: 'Lobster', cursive;
-}
-
-h1, h2, h3 {
-    border: 0;
-    margin: 0;
-    padding: 0;
 }
 
 #title {
@@ -62,18 +61,6 @@ article {
     padding: 5px 10px
 }
 
-.vflex {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    -webkit-box-flex: 1;
-}
-
-.scrolling {
-    -webkit-overflow-scrolling: touch;
-    overflow: auto;
-}
-
 .app {
     position: absolute;
     top: 89px;
@@ -82,6 +69,28 @@ article {
     right: 0;
     border-top: 1px solid #222;
     border-bottom: 1px solid #999;
+}
+
+.scrolling {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.vflex {
+    display: -webkit-box;
+    display:-moz-box;
+    display:box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    -webkit-box-flex: 1;
+    -moz-box-orient: vertical;
+    -moz-box-align: stretch;
+    -moz-box-flex: 1;
+    box-orient: vertical;
+    box-align: stretch;
+    box-flex: 1;
 }
 
 .master {
@@ -143,7 +152,6 @@ article {
 
 #category {
     width: 100%;
-    height: 2em;
 }
 
 .toolbar {
@@ -209,21 +217,15 @@ article {
     box-shadow: 3px 3px 5px #222;
 }
 
-.panel {
-    /* gets .vflex + .scrolling */
-}
-
-    /* this adds the extra pixel that's neccessary if the content is < panel height */
-.panel-content {
-    margin-bottom: -1px;
-    /* gets .vflex */
-}
-
 a {
     text-decoration: none;
-    opacity: 0.5;
+    color: #ccc;
 }
 
 a:hover {
-    opacity: 1;
+    color: #222;
+}
+
+a:active {
+    color: #292929;
 }
