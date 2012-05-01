@@ -30,6 +30,12 @@ header {
     font-family: 'Lobster', cursive;
 }
 
+h1, h2, h3 {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
 #title {
     padding-left: 10px;
 }
@@ -113,7 +119,7 @@ article {
 }
 
 #title {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #title img {
@@ -135,8 +141,13 @@ article {
     vertical-align: middle;
 }
 
+#category {
+    width: 100%;
+    height: 2em;
+}
+
 .toolbar {
-    font-size: 0.80em;
+    font-size: 0.9em;
     line-height: 1.2em;
     color: #ddd;
     font-family: 'Lobster', cursive;
@@ -152,6 +163,50 @@ article {
     background-image:     -ms-linear-gradient( #444 , #333 ); /* IE10 */
     background-image:      -o-linear-gradient( #444 , #333 ); /* Opera 11.10+ */
     background-image:         linear-gradient( #444 , #333 );
+}
+
+.master ul li:hover {
+    background: #333;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #393939 ), to( #292929 )); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient( #393939 , #292929 ); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient( #393939 , #292929 ); /* FF3.6 */
+    background-image:     -ms-linear-gradient( #393939 , #292929 ); /* IE10 */
+    background-image:      -o-linear-gradient( #393939 , #292929 ); /* Opera 11.10+ */
+    background-image:         linear-gradient( #393939 , #292929 );
+}
+
+.master ul li h1 {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: #ddd;
+    font-family: 'Lobster', cursive;
+}
+
+.master ul li h3 {
+    font-size: 0.9em;
+    line-height: 1.2em;
+    color: #aaa;
+    padding-left: 10px;
+    font-family: 'Lobster', cursive;
+}
+
+#footer #website {
+    color: #ccc;
+    padding-right: 5px;
+}
+
+#footer #copyright {
+    color: #777;
+    padding-left: 5px;
+}
+
+#footer .separator {
+    color: #999;
+    padding-left: 5px;
+}
+
+#footer .icon {
+    box-shadow: 3px 3px 5px #222;
 }
 
 .panel {
