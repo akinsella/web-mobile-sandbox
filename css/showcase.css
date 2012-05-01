@@ -78,29 +78,20 @@ article {
     -webkit-overflow-scrolling: touch;
 }
 
-.vflex {
-    display: -webkit-box;
-    display:-moz-box;
-    display:box;
-    -webkit-box-orient: vertical;
-    -webkit-box-align: stretch;
-    -webkit-box-flex: 1;
-    -moz-box-orient: vertical;
-    -moz-box-align: stretch;
-    -moz-box-flex: 1;
-    box-orient: vertical;
-    box-align: stretch;
-    box-flex: 1;
-}
-
 .master {
     position: absolute;
-    top: 0;
     width: 320px;
     bottom: 0;
-    left: 0;
+    top: 0;
     border: 0;
     border-right: 1px solid #111;
+}
+
+#master-content {
+    position: absolute;
+    width: 320px;
+    top: 104px;
+    bottom: 0;
 }
 
 .detail {
@@ -155,10 +146,13 @@ article {
 }
 
 .toolbar {
+    position: absolute;
     font-size: 0.9em;
     line-height: 1.2em;
     color: #ddd;
     font-family: 'Lobster', cursive;
+    height: 104px;
+    overflow: hidden;
 }
 
 .master ul li, .toolbar, header, footer {
