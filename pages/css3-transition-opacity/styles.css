@@ -1,0 +1,78 @@
+
+/*body {*/
+    /*font:11px verdana, arial, helvetica, sans-serif;*/
+    /*color:#333;*/
+    /*background-color: #3d3d3d;*/
+    /*margin: 0; padding:0;*/
+    /*text-align:center;*/
+/*}*/
+
+h1 {
+    color:#B6C93C;
+    font: 2em 'Lobster', cursive;
+    font-weight: 800;
+}
+
+/*p {*/
+    /*font: 1em verdana;*/
+    /*color:#666;*/
+    /*line-height: 1.8;*/
+    /*margin: 0 0 1em;*/
+/*}*/
+
+pre {
+    padding: 20px;
+    text-align:left;
+    margin: 50px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 0.8em;
+}
+
+#demo-box {
+    padding: 20px;
+    margin: 20px;
+    background: #FAFAFA;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    bottom: 10px;
+    border:  3px solid #CCC;
+    text-align:left;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+
+    overflow: auto;
+}
+
+.transition {
+    opacity: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.transition:hover {
+    opacity: 0.5;
+}
+
+/*a:link {*/
+    /*color:#09c;*/
+/*}*/
+/*a:visited {*/
+    /*color:#07a;*/
+/*}*/
+/*a:hover {*/
+    /*background-color:white;*/
+/*}*/
