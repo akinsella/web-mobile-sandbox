@@ -33,7 +33,7 @@ function initRouter() {
 
             $('#styles').attr('href', 'pages/' + page + '/styles.css');
 
-            setTimeout(function() { prettyPrint(); }, 1);
+            setTimeout(function() { prettyPrint(); }, 100);
         }
     };
 
